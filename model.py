@@ -41,7 +41,7 @@ PERSIST_DIR = "./chroma_langchain_db"
 vector_store = Chroma(
     collection_name="agent-model",
     embedding_function=embeddings,
-    persist_directory=PERSIST_DIR,
+    persist_directory=None,
 )
 
 # --- Loaders / splitting ---
