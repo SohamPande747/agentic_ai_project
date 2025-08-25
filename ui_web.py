@@ -1,6 +1,8 @@
-import pysqlite3
-import sys
-sys.modules["sqlite3"] = pysqlite3
+
+# uncomment when running locally
+# import pysqlite3
+# import sys
+# sys.modules["sqlite3"] = pysqlite3
 
 import streamlit as st
 from model import ask_question, add_websites
