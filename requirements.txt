@@ -2,9 +2,9 @@ python-dotenv
 streamlit
 langchain
 langchain-google-genai
-langchain-chroma
 langchain-community
 langgraph
 bs4
 python-dotenv
 pysqlite3-binary
+faiss-cpu

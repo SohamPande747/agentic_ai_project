@@ -35,6 +35,7 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
 
 # --- Vector store (Chroma) ---import faiss
+import faiss
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
 
