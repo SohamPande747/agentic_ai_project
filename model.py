@@ -34,16 +34,19 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
 
-# --- Vector store (Chroma) ---
-from langchain_chroma import Chroma
+# --- Vector store (Chroma) ---import faiss
+from langchain_community.docstore.in_memory import InMemoryDocstore
+from langchain_community.vectorstores import FAISS
 
-PERSIST_DIR = "./chroma_langchain_db"
-vector_store = Chroma(
-    collection_name="agent-model",
+embedding_dim = len(embeddings.embed_query("hello world"))
+index = faiss.IndexFlatL2(embedding_dim)
+
+vector_store = FAISS(
     embedding_function=embeddings,
-    persist_directory=None,
+    index=index,
+    docstore=InMemoryDocstore(),
+    index_to_docstore_id={},
 )
-
 # --- Loaders / splitting ---
 import bs4
 from langchain_community.document_loaders import WebBaseLoader
