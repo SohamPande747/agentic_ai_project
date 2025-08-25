@@ -1,14 +1,10 @@
 
-# uncomment when running locally
-# import pysqlite3
-# import sys
-# sys.modules["sqlite3"] = pysqlite3
 
 import streamlit as st
 from model import ask_question, add_websites
 
 st.set_page_config(page_title="RAG Demo", layout="centered")
-st.title("RAG Demo (Streamlit UI)")
+st.title("Contextual QA RAG")
 
 # --- Add Website ---
 st.subheader("Add Websites to Knowledge Base")
